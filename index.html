@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Nube Marketing & Social Networks App</title>
-  <meta name="description" content="Sitio oficial de la app Nube Marketing & Social Networks">
-  <meta name="tiktok-developers-site-verification" content="pB57wGfZvkD3RgfkZgvQoEYIwVtDK7RQ" />
+  <title>Nube Social Networks Demo</title>
+  <meta name="description" content="Demo de integración con TikTok">
 </head>
 <body>
-  <h1>Bienvenido a Nube Marketing & Social Networks App</h1>
-  <p>Este es el sitio oficial de nuestra aplicación para TikTok Developers.</p>
+  <h1>Demo Nube Social Networks</h1>
+  <p>Haz login con TikTok para iniciar la demo:</p>
+  <button id="loginBtn">Login con TikTok</button>
+
+  <script>
+    const clientKey = "awqrvxofol7bh9e4"; // Tu Client Key
+    const redirectUri = "https://nubesocialnetworks.com/api/callback";
+    const state = "demo123"; // valor aleatorio para seguridad
+
+    document.getElementById("loginBtn").addEventListener("click", () => {
+      const authUrl = `https://www.tiktok.com/auth/authorize?client_key=${clientKey}&response_type=code&scope=user.info.basic&redirect_uri=${encodeURIComponent(redirectUri)}&state=${state}`;
+      window.location.href = authUrl;
+    });
+  </script>
 </body>
 </html>
