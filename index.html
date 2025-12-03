@@ -1,18 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <title>Nube Social Networks Demo</title>
-  <meta name="description" content="Demo de integración con TikTok">
+  <meta charset="utf-8" />
+  <title>Nube Social Networks</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
-  <h1>Demo Nube Social Networks</h1>
-  <p>Haz login con TikTok para iniciar la demo:</p>
-  <button id="loginBtn">Login con TikTok</button>
+  <header class="site-header">
+    <div class="container">
+      <h1>Nube Social Networks</h1>
+      <p>Demo de integración social via OAuth</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h2>Conéctate con TikTok</h2>
+      <p>Haz login para probar nuestra demo de OAuth.</p>
+      <button id="loginBtn">Login con TikTok</button>
+    </section>
+
+    <section class="info">
+      <h2>¿Qué ofrece esta demo?</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>OAuth con TikTok</h3>
+          <p>Flujo estándar de autorización + callback + código de demo.</p>
+        </div>
+        <div class="card">
+          <h3>Fácil de desplegar</h3>
+          <p>Listo para Vercel + GitHub, sin dependencias extra.</p>
+        </div>
+        <div class="card">
+          <h3>Extensible</h3>
+          <p>Puedes añadir más redes sociales o funcionalidades si quieres.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer-cta">
+      <p>¿Interesado en más funcionalidades? Contáctanos</p>
+      <!-- aquí podrías poner un enlace de contacto / formulario -->
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 Nube Social Networks</p>
+    </div>
+  </footer>
 
   <script>
-    const clientKey = "awqrvxofol7bh9e4"; // Tu Client Key
+    const clientKey = "awqrvxofol7bh9e4"; 
     const redirectUri = "https://nubesocialnetworks.com/api/callback";
-    const state = "demo123"; // valor aleatorio para seguridad
+    const state = "demo123";
 
     document.getElementById("loginBtn").addEventListener("click", () => {
       const authUrl = `https://www.tiktok.com/auth/authorize?client_key=${clientKey}&response_type=code&scope=user.info.basic&redirect_uri=${encodeURIComponent(redirectUri)}&state=${state}`;
